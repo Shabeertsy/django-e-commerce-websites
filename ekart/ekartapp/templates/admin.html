@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>easykart</title>
+
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+    <!-- bootstrap css cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+    <div class="admin-main font-family">
+
+        <!-- navbar -->
+        <div class="nav-main">
+            <nav class="navbar shadow navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand p-2" href="#"><i class="fa fa-shopping-cart p-3"></i>EasyShop</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+                    aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarText">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link p-2" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link p-2" href="#">Features</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link p-2" href="#">Pricing</a>
+                        </li>
+                    </ul>
+
+                    <ul class="navbar-nav ms-auto">
+            
+                    </ul>
+
+                </div>
+            </nav>
+        </div>
+
+        <!-- body -->
+
+        <div class="admin-body">
+            <div class="row">
+
+                <!-- admin dashboard -->
+                <div class="col-lg-2 admin-left-panel shadow">
+                    <h4 href="" class="m-4 text-center text-light">admin dashboard</h4>
+                    <p href="" class="m-4  text-light"><i class=" p-2 fa fa-product-hunt"></i> <a class="btn text-light text-capitalize" href="{% url 'adminallproducts' %}">All Products</a></p>
+                </div>
+
+                <!-- admin right side  with product details -->
+                <div class="col-lg-1"></div>
+
+                <div class="col-lg-7 admin-right-side">
+                    <div class="container m-5 shadow admin-container">
+                        <h3 class="m-4">Top Products</h3>
+                        <div class="container scroll m-2" style="height: 600px;">
+                            <div class="row">
+                                <div class="col-lg-3 admin-product-images">
+                                    <img class="w-100 h-100"
+                                        src="https://images.pexels.com/photos/157888/fashion-glasses-go-pro-female-157888.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                                        alt="">
+                                </div>
+                                <div class="col-lg-8">
+                                    <h3 class="">Bag</h3>
+                                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde sint quam illo
+                                        reiciendis labore nam itaque officia ducimus corporis eius eligendi possimus
+                                        dolorum libero, tempore esse aliquid numquam magnam totam.</p>
+
+                                    <p>Price : 1000$</p>
+
+                                </div>
+                
+                            </div> <div class="row mt-4">
+                                <div class="col-lg-3 admin-product-images">
+                                    <img class="w-100 h-100"
+                                        src="https://images.pexels.com/photos/157888/fashion-glasses-go-pro-female-157888.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                                        alt="">
+                                </div>
+                                <div class="col-lg-8">
+                                    <h3 class="">Bag</h3>
+                                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde sint quam illo
+                                        reiciendis labore nam itaque officia ducimus corporis eius eligendi possimus
+                                        dolorum libero, tempore esse aliquid numquam magnam totam.</p>
+
+                                    <p>Price : 1000$</p>
+
+                                </div>
+                
+                            </div>
+                            <div class="row mt-4">
+                                <div class="col-lg-3 admin-product-images">
+                                    <img class="w-100 h-100"
+                                        src="https://images.pexels.com/photos/157888/fashion-glasses-go-pro-female-157888.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                                        alt="">
+                                </div>
+                                <div class="col-lg-8">
+                                    <h3 class="">Bag</h3>
+                                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde sint quam illo
+                                        reiciendis labore nam itaque officia ducimus corporis eius eligendi possimus
+                                        dolorum libero, tempore esse aliquid numquam magnam totam.</p>
+
+                                    <p>Price : 1000$</p>
+
+                                </div>
+                
+                            </div>
+                            <div class="row mt-4">
+                                <div class="col-lg-3 admin-product-images">
+                                    <img class="w-100 h-100"
+                                        src="https://images.pexels.com/photos/157888/fashion-glasses-go-pro-female-157888.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                                        alt="">
+                                </div>
+                                <div class="col-lg-8">
+                                    <h3 class="">Bag</h3>
+                                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde sint quam illo
+                                        reiciendis labore nam itaque officia ducimus corporis eius eligendi possimus
+                                        dolorum libero, tempore esse aliquid numquam magnam totam.</p>
+
+                                    <p>Price : 1000$</p>
+
+                                </div>
+                
+                            </div>
+                            <div class="row mt-4">
+                                <div class="col-lg-3 admin-product-images">
+                                    <img class="w-100 h-100"
+                                        src="https://images.pexels.com/photos/157888/fashion-glasses-go-pro-female-157888.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                                        alt="">
+                                </div>
+                                <div class="col-lg-8">
+                                    <h3 class="">Bag</h3>
+                                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde sint quam illo
+                                        reiciendis labore nam itaque officia ducimus corporis eius eligendi possimus
+                                        dolorum libero, tempore esse aliquid numquam magnam totam.</p>
+
+                                    <p>Price : 1000$</p>
+
+                                </div>
+                
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
