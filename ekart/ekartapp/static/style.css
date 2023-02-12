@@ -113,10 +113,10 @@ body {
   font-size: 1rem
 }
 
-.card:hover {
+/* .card:hover {
   transform: scale(1.05);
   box-shadow: 0 10px 20px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06)
-}
+} */
 
 .label-top {
   position: absolute;
@@ -197,21 +197,6 @@ body {
   outline: 0;
   box-shadow: -1px 6px 19px rgba(247, 129, 10, 0.25);
   border-radius: 100px
-}
-
-.btn-warning:hover {
-  background: none #ff962b;
-  color: #ffffff;
-  box-shadow: -1px 6px 13px rgba(255, 150, 43, 0.35)
-}
-
-.bg-success {
-  font-size: 1rem;
-  background-color: #f7810a !important
-}
-
-.bg-danger {
-  font-size: 1rem
 }
 
 .price-hp {
@@ -331,39 +316,130 @@ body {
 
 
 /* mycart styling */
+.cart-body{
+  background-color: #f7efef;
+
+}
+.bg-grey {
+  background-color: #eae8e8;
+  }
 
 .cart-container {
-  min-height: 700px;
+  min-height: 1000px;
 }
 
 .cart-image {
   height: 150px;
-  border-radius: 14px;
-  width: 37%;
+  border-radius: 8px;
+  width: 30%;
+}
+
+.cart-fixed-bar {
+  position: fixed;
+  top: 93%;
+  height: 70px;
+  background-color: rgb(180, 139, 6);
+  width: 100%;
 }
 
 .number {
   margin-top: 10px;
-  border:none;
-  border-radius: 8px;
+  border: none;
+  border-radius: 4px;
   width: 80px;
   padding: 5px;
   color: black;
   height: 30px;
 }
-.br-n cards{
-  
+
+.br-n cards {
+
   border-bottom: 1px solid;
 }
+
+.badge {
+  position: absolute;
+  top: 20px;
+  right: 62px;
+  padding: 5px 8px;
+  background-color: rgb(138, 36, 36);
+  color: white;
+}
+
+
+
 
 /* register and login styling */
 .register-left {
   background-color: rgb(18, 18, 45);
 }
-.register-container{
+
+.register-container {
   border-radius: 5px;
 }
 
 .login-main {
   background-color: rgb(225, 212, 212);
 }
+
+
+
+
+/* profile styling */
+
+.profile-main {
+  background-color: rgb(233, 215, 215);
+}
+
+.profile-left {
+  background-color: rgb(45, 30, 13);
+  height: 800px;
+}
+
+.profile-list {
+  background-color: rgb(45, 30, 13);
+  height: 40px;
+  border: 1px solid;
+  color: #fff;
+  margin-top: 10px;
+}
+
+.profile-list:hover {
+  background-color: #fff;
+  color: black;
+}
+
+.profile-button {
+  border: none;
+  background-color: rgb(45, 30, 13);
+  border-radius: 8px;
+  width: 8rem;
+  height: 28px;
+}
+
+.profile-button:hover {
+
+  background-color: #af6011;
+}
+
+.profile-button a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.profile-right {
+  background-color: rgb(241, 240, 240);
+  height: 800px;
+}
+
+
+
+/* edit profile main */
+
+.edit-profile-main {
+  background-color: rgb(233, 211, 211);
+  min-height: 100vh;
+}
+
+
+

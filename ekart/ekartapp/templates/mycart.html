@@ -19,111 +19,109 @@
 </head>
 
 <body>
+  <div class="cart-body">
+    <!-- navbar -->
+    <div class="nav-main font-family">
+      <nav class="navbar shadow navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand p-2" href="#"><i class="fa fa-shopping-cart p-3"></i>EasyShop</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+          aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item active">
+              <a class="nav-link p-2" href="{% url 'login_index' %}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link p-2" href="{% url 'adminpage' %}">Admin</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link p-2" href="#">Pricing</a>
+            </li>
+          </ul>
 
-  <!-- navbar -->
-  <div class="nav-main font-family">
-    <nav class="navbar shadow navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand p-2" href="#"><i class="fa fa-shopping-cart p-3"></i>EasyShop</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
-        aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarText">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item active">
-            <a class="nav-link p-2" href="{% url 'login_index' %}">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link p-2" href="{% url 'adminpage' %}">Admin</a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link p-2" href="#">Pricing</a>
-          </li>
-        </ul>
-
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item ">
-            <a class="nav-link p-2" href="#">{{user.first_name}}</a>
-          </li>
-        </ul>
-
-      </div>
-    </nav>
-  </div>
-
-  <div class="container font-family mt-3 cart-container">
-    <h3 class="mt-5 font-family text-primary">My Cart</h3>
-
-    <div class="row">
-      <div class="col-lg-6 border-top">
-        <div class="col">
-          <div class="cards br-n border-bottom">
-            <div class="card-block">
-              <h4 class="card-title">Card title</h4>
-            </div>
-            <img class="cart-image"
-              src="data:image/jpeg;base64,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"
-              alt="Card image">
-            <div class="card-block">
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.</p>
-              <div class="d-flex">
-                <select class="shadow number" name="" id="">
-                  <option value="">1</option>
-                  <option value="">2</option>
-                  <option value="">3</option>
-                </select>
-                <p class="m-3">Price:200$</p>
-                <div class="d-flex">
-
-                  <button class="btn btn-warning" style="height:40px;">Remove</button>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-
-
-        <div class="col">
-          <div class="cards br-n border-bottom">
-            <div class="card-block">
-              <h4 class="card-title">Card title</h4>
-            </div>
-            <img class="cart-image"
-              src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHCBUSEBIUERISEQ8SEREQDw8QEREPEQ8PGBUZHBkUFhgcIS4lHB4rIRgYJjonLS8xNTU1GiU7QDszPy5CNTQBDAwMEA8QHhISHDQhISExMTQ0MTQ0MTQ0NDQ0NDQ0NDQ0NDQ0NDQ0NjE0NDQ0NDQ0NDQ0NDQ0NDQ0NDE0NDU0NP/AABEIALgBEQMBIgACEQEDEQH/xAAcAAEAAgMBAQEAAAAAAAAAAAAABQYDBAcBAgj/xABLEAACAQICAwkJDgUCBwAAAAAAAQIDBAURBiExBxJBUWFxcrGyEyI0NVSDkaHRFBUXIzJCUlNigZKTwdIWJTOCoiRzQ0RjlLPC8P/EABoBAQADAQEBAAAAAAAAAAAAAAABAwQCBQb/xAApEQEAAgEEAQIGAgMAAAAAAAAAAQIRAxIhMQQTQQUyUYGR8CLRQqGx/9oADAMBAAIRAxEAPwDswAAAAAAAAAAAAADTu8Qp0nlOaUuCKzcvQjUekFH/AKj5VBk4lGYS4IhaQUft/gZ77/UuKp+BjbJmEsCJ9/qXFU/AzBdaU29KLlUlKEVtlNKEVzuTSQ2yZhOgpkt0vDFqdys+SO+9azQ+E3DPKf8ACRCVzBTPhNwzyn/CR78JuGeU/wCE/YMGVyBTPhNwzyn/AAkPhOwzyn/CQMrmCmLdNwzPL3T97hLIm8I0ktLvVbXFOpLhhGS3y+4GUwAAAAAAAAAAAAAAAAAAAAAAAAAABp4nc9yozmvlJJRT+k3kus3CG0nf+m56kF6yYjMonpQNJtIo2NOM5p1birm4wb1yfDKT4FrWvlyRXMN3SJd0SuaMVSbyc4TlnBcbT2ox7qFlPutOvGLlCEZRmlm95FtNS5tqz5uMo0HKvKNOlDOcpPJRT4WtvElx8Gs7meXMRD9DUqkZRUo64tb5PN60fU6UXszTyzyeWeXGmR2B0XTtqUG83CnCG+fDvUln6iSlUcmm96stSUU0dzlxw0a0t7FviKZo3hEcXrVbu7cpWdOrKla22+lGE97rc5Zc62bXmtiyLZjEsoVOi9nRI7cveWE0eWdbP8yQ94iVepMxTMJl6OWMVkrKz++2oyfpccyIx7R+1nbVoUrW0p1pU5xpTjQpU3Cpl3r30Y5rXlrJq9ucsyu3t/t1mqtazGMPOm1s5y5FWwS5i967WumtTapVJJvjTSy9Bh96bjyav+TU9h02tiHKak7/AJSa+FSfef8ATVHm3+kOfe9Nx5NX/Jqewv2huCQp28ndW9KdSc99FVYQqTjDepJPfJ73Xm8j1X3KZqV7r2mvR8HTpbdnP4XV8ibJ+nhFo/8AlbX/ALel+0jNIdFYQpO6sF7muqEXVj3JuMZxjrlHerUnkns27GbdlcttE/GWdKeezeTb5t6yPI0645aqW3QsGg2Oe78Po15Zb9reVMvrI6mWI51uJSzwnLirVMvxM6KeGkAAAAAAAAAAAAAAAAAAAAAAAAIjSXwf++HWS5E6SeD+ch1k17RPSsX9oqj4pa8maNvgsISbyjHhlvYqO+58tpLN5rPjWT5GYqNGMIKEFlGKaitbyX/zLlLlelWk1xVuatG3nKlQob6LVN7yUt4u+lKW3JZP0GfQ3Si4p3VO3uJyqUquSXdO+nCTjnFqW1p8vGjW0q0ZrK4qVbdKSqNupDfKElJrvms2k09vHrZl0V0cre6Y17nU6fyI75Tk3lknJptJJcGeezgOOcrOMOj4u+8nzPskNucVcsJo9Ot/5JEriH9KfLGT9RXNAZ5YXS6dbtyOp7hTqRmn3TGJ3O0q95c7SVxOrtKzdz1s0acsVqsNauYJVDHOR8m6llO1lVRm5bSbZpU4ZsmsPtM2jRF8Qu04nKZwmm20WLEZdztKnHOLpxXLJP8A9d8zBhFns1EVi2Jq4rSjDXRoxlCMlsqT+dJca1JLmz4TyfiPlbaTjueH0HwrxZ1daM9V5n7e33nj8p3cR8U+eqdpnRTnW4j4p89U7TOimKe2SOgAEJAAAAAAAAAAAAAAAAAAAAAAidJPB/74dZLEPpLLKglx1I/qya9onpW0+J5Hrm+P1I+Uz3MuUsdSipfK1/ceQoRjsRlzGYGpif8ATl0ZdRU9Bp5YbS6VXtyLZiL+Ll0ZdTKXoZPLDqfSq9tnM9wW+VtYlPaV65lrJi/qbSFqLNmvTqw6ktdxPuFPMz0rdsmLDDW2tRqjEKYibTiGrY2TbWoteFYbs1G1hWDt5ajS0h0jjRUqFo1KtrjVrx1xp8cab4Z8uxc+zN5HlV065mXq+J4t9SdtYfGlOLqlF21vL42S3txUj/w4ta6cX9J8PEuV6onCqOUH0X1EdaW2b+/Nt623xssttQypy5pdR83qa9te+6X2fiaNfG0dsdz3P1Tm4j4p89U7TOinN9xCf8ra4qs5emUl+h0g9Se3yNegAEJAAAAAAAAAAAAAAAAAAAAAAhdJ/wCjD/cj1MmiF0nXxMeSpD9Sa9ot0rZ6eIFyl6DwAauIv4uXRl1MomiNTLD4dKp2mXvEH8XLoy7LOeaKy/0UF9qfaYiM2hF/l+7aunmz4oWjk9hvUbVzlsLThOCN5No074qqr483Q+HYO3lqLTbYbClBzqyjCEflTlqXNyvkN6bp20dilP6K2J/af6FSxq9nWlnKWaXyYrVGK+yjHr+Ztjh6nifDd3M8R+9MOkWkrnF0bZSpUHnGdT5NWouL7MeTa+HiKxb23IblWGs2LWjrPn9fWvqW5l9BoaVNONtYxH7+/wDGzY2uwmlS7yXRl1GKzoEjOn3kujLqLNKvC7Uvwxbh/i19N9uodKOa7iC/lrf22v8AOftOlHsz2+RjoABCQAAAAAAAAAAAAAAAAAAAAAInSTwfzkOsliJ0k8H85DrJjtE9KugfJ7mXKXpsWlrKpLKOSS1yk9iNbMlcFqJKa4c0/uImcQmIzLUxWwlTt6zzhJOHy++Uopa2ksuHVwnLtDKDna019qfaZ1zSGf8ApqnQl1FC3L7Pf2VOWXz6nbZFJ5ytrpxacLPg2EJJNrlJe4uVTjvYauOXC+biMtWahHerYtr4yHuqsX8+P4kV3vM8V5en4+jXibI+/uM8yEuJZkvcUW9mvmeZDXWraYdStvd7FaxaP48tOUdZvWUNZGyqrMkLGpm0ZJ0+XOcLFaU9SN2rDvJ9CXUzXstiN+rHvJ9B9TNFK4ZtS/KN3EfFPnqnaZ0U51uI+KfPVO0zop6M9vn46AAQkAAAAAAAAAAAAAAAAAAAAACI0k8H85DrJciNJPB/OQ6yY7RPSrA8R6XKQyUKrhJSX3rjXEYwEvrF75zpTW9STi1tbewgNzi8hb4PGrN5RjKtzt7+WSXKSmIf030X1HMHiTjhNnQi8lvq9WeXC3VnGK9UvSRtjOFulfGZlP4xphOpN5Pexz72K2JfqQsscm/nP0lblNhTO98xxC71rT7rTRxya+c/SSVLHVJZVEpLl2rme0oyqMywuWuEn1M8Ty6rr2rOYlb7u13ycqEt9wum/lrm4+sw4Vf99k9TT1oh7LEXFrWS1amq3xlPJV463FalWX7usz63i1vG7T7+n9N1PiO/+Or+f7/v8ugYVVzSJis0qdRvYoSb5lFlR0Zu99FetPgZvabYurbDquv42tCVClHhbmspS/ti2+fJcJjpXM4hGrfGZbm4j4p89U7TOinOtxHxT56p2mdFNcvLAAQAAAAAAAAAAAAAAAAAAAAAARGkng/nIdZLkRpL4P5yHWTHaJ6VVHp85jMuUvo8GZ5mTA1sQ+RLovqON2+btqfJvkubfN/qzseIfIl0X1HJcPo52lN8s+tk1+b7Inr7o6UT5yNqdMxSgJh3EsIPtxPHE5wnLyMsiYwu8cZLWRCibNvqZ1ScSi3S8xv5UYSr0oRk3l3SLbSi38/Jbde3ZxlPx7EKlxNzrTc5ZZRWyMI/RiuBFiwS4XyZLOMk4yi9ji9TRXNILN0as4bYrvoSfzoPXF/pzplk0pGbRHMuPUvbFZniHY9xLxT56p2mdEOd7iXinz1TtM6IYmgAAAAAAAAAAAAAAAAAAAAAAAAIjSXwZ9OHWS5D6TeDPpw6ya9onpU0xmfKZ7mXKX1meZnzmMzpDBiH9OXM+o51gNvvrCm/tVO0zol++8lzPqKdohR32HU+lV7bIj5k+yDubXJ7DSnRLZdWe3URda05CxEIKVM+HAlZ2xilbnMwnKOUDNSgbHcDLSoERCZlvYYsmjZ01td9bUq6WunLuU39iWuLfM01/cfWH0NaJ3FrXumH3MMs33GU0vtQ75euKO5nhxjlZNxLxSv96p2mdEOd7iXinz1TtM6IY2kAAAAAAAAAAAAAAAAAAAAAAAAIbSjwZ9OHWTJC6VeDecp9ZNe0T0qSPDxHpoUAAA175/Fy5n1Fc0Fhnh1Lp1e2yw4gs6cui9nMQWgGvDafJKr22c/5J9klWtszQrWPIT7gfEqRYhV6lhyGtOx5C1ytkY5Wi4iUKp7h5DNSsOQsfuNcR9wtVxAR1laZEvKnnSnH6VOpH0xaPYUsjJUeVOfEoSb5smczKcNncR8U+eqdpnRTnO4jH+VZ8dapl6ToxlaAAAAAAAAAAAAAAAAAAAAAAAAA0sVte7UJwWqTScW/pJ5r1o3QBzaUXFuMk4yi8pRepxfExmXq/wALp1/lx77Ypx72aXOaP8L0fp1vxx/aWxqfVVNJVMZls/hej9Kr+KP7Tz+FqP06v4oftJ3wbJVCvHOLKVhN+sMq1KFwpRtKlR1LeuoylGDe2EsuZbOLPYzsf8LUvrKv4oftNe40Lt6iak6sk9sXKDi+dOOTIm8SmKz7qVHH7RrNXdv99WEX6Gz69/bTyu2/Op+0sktzHDntovPjShH1Rike/Bhhv1L9MfYPUNite/tp5XbfnU/aee/tp5XbfnU/aWb4McN+pfpj7D34McN+o9cfYPUPTVj38tPK7b86n7R7+2nldt+dT9pZ/gxw36j1x9g+DHDfqPXH2D1DYrHv9aeVW350PaQmO6RwqxdtYt3FzWTpp003GEZapPPheT4Nm3kfQvgyw36j1x9hN4Lo1a2fg9GEJPbPeQU/SkiJuRRraDYH7gw+jQll3RLf1MvrJa2WIArWAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//2Q=="
-              alt="Card image">
-            <div class="card-block">
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.</p>
-              <div class="d-flex">
-                <select class="shadow number" name="" id="">
-                  <option value="">1</option>
-                  <option value="">2</option>
-                  <option value="">3</option>
-                </select>
-                <p class="m-3">Price:200$</p>
-                <button class="btn btn-warning" style="height:40px;">Remove</button>
-
-
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-6 border-top">
-        <div class="cards br-n">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item ">
+              <a class="nav-link p-2 text-capitalize" href="#">{{user.first_name}}</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link p-2" href="{% url 'login_index' %}">Back</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link p-2 mx-3" href="{% url 'user_logout' %}">Logout</a>
+            </li>
+          </ul>
 
         </div>
-      </div>
-
+      </nav>
     </div>
 
+
+    <!-- body -->
+    <section>
+    <div class="container font-family mt-3 cart-container">
+      <h3 class="mt-5 font-family text-primary">My Cart</h3>
+      <div class="row pb-5" style="min-height: 900px;">
+        <div class="col-lg-8 bg-light ">
+          {% for item in data %}
+          <div class="col">
+            <div class="cards  m-3 br-n border-bottom">
+              <div class="card-block">
+                <h4 class="card-title">{{item.product.product_name}}</h4>
+              </div>
+              <img class="cart-image" src="/media/{{item.product.product_image}}" alt="Card image">
+              <div class="card-block">
+                <p class="card-text">{{item.product.description}}</p>
+                <div class="d-flex px-3">
+                  <select class=" number" name="" id="">
+                    <option value="">1</option>
+                    <option value="">2</option>
+                    <option value="">3</option>
+                  </select>
+                  <p class="m-3"> ₹ {{item.product.price}}</p>
+                  <div class="d-flex">
+
+                    <a class="btn btn-warning" href="{% url 'remove_from_cart' item.id %}"
+                      style="height:40px;"><i class="fa fa-trash"></i></a>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+
+        <div class="col-lg-4 bg-grey">
+          <div class="row" style="height:40%">
+            <h5 class="px-5 pt-5">Payment Type</h5>
+            <ul class="p-5 list-group">
+              <li class="list-group-item">UPI</li>
+              <li class="list-group-item">CREDIT/DEBIT Cards</li>
+              <li class="list-group-item">COD</li>
+              <li class="list-group-item">Porta ac consectetur ac</li>
+              <li class="list-group-item">Vestibulum at eros</li>
+            </ul>
+          </div>
+          <div class="row">
+            <h5 class="p-5">Placement Address</h5>
+          </div>
+        </div>
+
+      </div>
+      <div class="container row bg-dark cart-fixed-bar">
+        <div class="col-lg-6">
+          <h5 class="text-light p-3">Total : ₹  {{total}}</h5>
+        </div>
+        <div class="col-lg-6 d-flex justify-content-end">
+          <button class="btn btn-warning m-3">Place Order</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
   </div>
-
-
-
 </body>
 
 </html>

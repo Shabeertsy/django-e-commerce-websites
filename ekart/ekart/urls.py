@@ -32,6 +32,17 @@ urlpatterns = [
     path('user_logout',views.user_logout,name='user_logout'),
     path('login_index',views.login_index,name='login_index'),
     path('add_product_page',views.add_product_page,name='add_product_page'),
+    path('addproduct_handler',views.add_product,name='addproduct_handler'),
+    path('edit_product_page/<int:product_id>',views.edit_product_page,name='edit_product_page'),
+    path('edit_product_handler/<int:product_id>',views.edit_product_handler,name='edit_product_handler'),
+    path('delete_product/<int:product_id>',views.delete_product,name='delete_product'),
+    path('add_to_cart/<int:product_id>',views.add_to_cart,name='add_to_cart'),
+    path('profile',views.profile,name='profile'),
+    path('edit_profile/<int:user_id>',views.edit_profile,name='edit_profile'),
+    path('edit_profile_handler/<int:id>',views.edit_profile_handler,name='edit_profile_handler'),
+    path('remove_from_cart/<int:product_id>',views.remove_from_cart,name='remove_from_cart'),
+    path('address',views.address,name='address'),
+    
     
 
 

@@ -16,9 +16,7 @@
                 <li class="nav-item active">
                     <a class="nav-link p-2" href="#">Home <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link p-2" href="{% url 'adminpage' %}">Admin</a>
-                </li>
+
                 <li class="nav-item ">
                     <a class="nav-link p-2" href="#">Pricing</a>
                 </li>
@@ -27,14 +25,30 @@
 
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item ">
-                    <a class="nav-link p-2 text-capitalize" href="">{{user.first_name}}</a>
+                    <a class="nav-link p-2 text-capitalize" href="{% url 'profile' %}"><img style="width: 30px;"
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIEAAACBCAMAAADQfiliAAAAYFBMVEX///8AAABaWlqkpKT4+PjU1NT8/PxeXl46OjpwcHCcnJwTExPh4eEYGBjn5+cEBATt7e2wsLBGRkbIyMgoKCiPj4+Dg4NBQUG5ubk0NDSVlZVnZ2eJiYlQUFB9fX0MDAz5O9bIAAADoElEQVR4nO2af3erIAyGVRSrdajVdq4/1u//LUfQVtC0dW3ozrk3z7l/7CKT15AECAsChmEYhmEYhmEYhmH+SeRfCwCqpMmzCMjyJqnePLos8nQV2qzSvHifYWIRhRiRiN8yfnUcBmzTrRB1XQuxTduh7eh/NuLcjLQ+CBWPVpexEoe1eZL7tIMeMTGzvxIKeaxE/zDxKWFvvr++9Zlxbeyw9yagOsH7hTaFxNwe2qSZpI0nbyjg5enV/jdiT6XQrfAhIPnQb95Z3qf/qa4WdaccMXKn+314cIYCBAinqT4NMXiqnXYBEoitIIMKRmrGBhkkX1Yy+kps32igidgX5MYRoCV1ZVheBeifO7s7SNjQKthPp6AJLQHm58Z+LKiDEr5pZzfEyLLgZIldONH0GrFOdqnj8N+OBXorfDu/ooNyRZegYQ6UnQBUiCgIrVQtoQvdPEAc5E5LjkwC0qekige9HK/dDHhAFRycPnI98Z3nAa9zU071iSr4dD+5nnrn04iZTy1TAP7rJtEnkdHsRcsUgPSIYu+ol8S1clfChQrUmmaRzKcuFizzxL5bPm17ghSZTYEqwLqlrwuoVk6q6VGoglk3nUi+Xk8JiX7LPKYeZmVDrBfw17cqDWrJ+DyzwBmJ/ZRiedKOuMWElaGzPwhLbKgthStmN9JKN1HQYZ20K2YvK5jnI0Cnh8I+uq4KdPMMOYlCQX3jUZcO46eoAQKzNHhVALt1IcRkt/42BZUbZngJg0oB4geJTrhRc/l22eheByTySfwAi4VkqGCco2Mu8mM0JIdopoEkFub5QO4h/DV2RjT/LfcTjyDJB7OcWOElnMEMrjuQ5MTpulC0syXBXhxae0NAsy7A2mh9GAi4o8CVQLM2WvsDPclVe3P0C+04Js3+AFxx9OfozhRcJmKMv4xmj9TvE69qHlGOo1LtE629cvJYgGHwPqq9snVeuBeHNv08kJ0XxjPTUhMMRqA7M13PjaeHI184BaTnRnN2FmCLO5nARneLzeSRnZ2hfnBWNw4JOCJQZ8o6Tl9DyX6hIJO0NZS+jvQ4HY60xHWkvo7zW4gL3JtfCyCuJ0I8LAuEnpK8pmrqyguD0YQjdV0ZgNr6wnzgp7Y+3C8sxMv9gvaFTfh4JqCDrzuWYGlQ+rtnCi53bXfxetcWXO8bsbno27zeN/Zc71wx3nDnCvz1vTPw13fvPVXSiOHvD8T7//6AYRiGYRiGYRiGYZj/iR+tziJrCr/oUAAAAABJRU5ErkJggg=="
+                            alt="" class="rounded-circle"> {{user.first_name}}</a>
                 </li>
+
                 <li class="nav-item ">
-                    <a class="nav-link p-2" href="{% url 'mycart' %}">Cart</a>
+                    <a class="nav-link p-2 btn text-danger" href=""><i class="fa fa-heart"></i></a>
                 </li>
+
+                <li class="nav-item ">
+                    <a class="nav-link p-2" href="{% url 'mycart' %}">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+                            class="bi bi-cart" viewBox="0 0 16 16">
+                            <path
+                                d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                        </svg>
+                        <span class="badge badge-danger rounded-circle">{{number}}</span></a>
+                </li>
+
+
                 <li class="nav-item ">
                     <a class="nav-link p-2" href="{% url 'user_logout' %}">logout</a>
                 </li>
+
             </ul>
         </div>
     </nav>
